@@ -1,0 +1,527 @@
+//Adapter
+
+package com.example.analis23.adapter;
+
+import android.content.Context;
+
+import android.support.design.widget.TabLayout;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import android.widget.TableLayout;
+import android.widget.TextView;
+
+import com.example.analis23.R;
+import com.example.analis23.model.DataModel;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.List;
+import java.util.Locale;
+
+public class adaptertampil extends RecyclerView.Adapter<adaptertampil.HolderData> {
+
+
+    private List<DataModel> mList;
+    private Context ctx;
+    private TableLayout a;
+
+
+    public adaptertampil(Context ctx, List<DataModel> mList) {
+        this.ctx = ctx;
+        this.mList = mList;
+    }
+
+    @NotNull
+    @Override
+    public adaptertampil.HolderData onCreateViewHolder(ViewGroup parent, int viewType) {
+        View layout1 = LayoutInflater.from(parent.getContext()).inflate(R.layout.listdetail, parent, false);
+        adaptertampil.HolderData holder1 = new adaptertampil.HolderData(layout1);
+        return holder1;
+
+    }
+
+
+
+    @Override
+    public void onBindViewHolder(HolderData holder1, int position) {
+
+        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+        formatter.applyPattern("#,###,###,###");
+
+        DecimalFormat bulan = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+        bulan.applyPattern("## Bulan");
+
+        DecimalFormat persen = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+        persen.applyPattern("#,## %");
+
+        DecimalFormat persen1 = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+        persen1.applyPattern("#,# %");
+
+
+        DataModel dm = mList.get(position);
+
+       
+
+        holder1.nama_jaminan_shm1.setText(dm.getNama_jaminan_shm1());
+        holder1.jenis_jaminan_shm1.setText(dm.getJenis_jaminan_shm1());
+        holder1.atas_nama_shm1.setText(dm.getAtas_nama_shm1());
+        holder1.alamat_atas_nama_shm1.setText(dm.getAlamat_atas_nama_shm1());
+        holder1.no_ktp_atas_nama_shm1.setText(dm.getNo_ktp_atas_nama_shm1());
+        holder1.masa_berlaku_shm1.setText(dm.getMasa_berlaku_shm1());
+        holder1.ikatan_shm1.setText(dm.getIkatan_shm1());
+        holder1.nilai_ikatan_shm1.setText(dm.getNilai_ikatan_shm1());
+        holder1.no_SHM1.setText(dm.getNo_SHM1());
+        holder1.no_gs_shm1.setText(dm.getNo_gs_shm1());
+        holder1.luas_shm1.setText(dm.getLuas_shm1());
+        holder1.lokasi_shm1.setText(dm.getLokasi_shm1());
+        holder1.asuransi_shm1.setText(dm.getAsuransi_shm1());
+        holder1.nilai_tanah_shm1.setText(formatter.format(Integer.parseInt(dm.getNilai_tanah_shm1())));
+        holder1.nilai_bangunan_shm1.setText(formatter.format(Integer.parseInt(dm.getNilai_bangunan_shm1())));
+        holder1.total_taksiran_shm1.setText(formatter.format(Integer.parseInt(dm.getTotal_taksiran_shm1())));
+
+
+        holder1.nama_jaminan_shm2.setText(dm.getNama_jaminan_shm2());
+        holder1.jenis_jaminan_shm2.setText(dm.getJenis_jaminan_shm2());
+        holder1.atas_nama_shm2.setText(dm.getAtas_nama_shm2());
+        holder1.alamat_atas_nama_shm2.setText(dm.getAlamat_atas_nama_shm2());
+        holder1.no_ktp_atas_nama_shm2.setText(dm.getNo_ktp_atas_nama_shm2());
+        holder1.masa_berlaku_shm2.setText(dm.getMasa_berlaku_shm2());
+        holder1.ikatan_shm2.setText(dm.getIkatan_shm2());
+        holder1.nilai_ikatan_shm2.setText(dm.getNilai_ikatan_shm2());
+        holder1.no_SHM2.setText(dm.getNo_SHM2());
+        holder1.no_gs_shm2.setText(dm.getNo_gs_shm2());
+        holder1.luas_shm2.setText(dm.getLuas_shm2());
+        holder1.lokasi_shm2.setText(dm.getLokasi_shm2());
+        holder1.asuransi_shm2.setText(dm.getAsuransi_shm2());
+        holder1.nilai_tanah_shm2.setText(formatter.format(Integer.parseInt(dm.getNilai_tanah_shm2())));
+        holder1.nilai_bangunan_shm2.setText(formatter.format(Integer.parseInt(dm.getNilai_bangunan_shm2())));
+        holder1.total_taksiran_shm2.setText(formatter.format(Integer.parseInt(dm.getTotal_taksiran_shm2())));
+
+        holder1.nama_jaminan_shm3.setText(dm.getNama_jaminan_shm3());
+        holder1.jenis_jaminan_shm3.setText(dm.getJenis_jaminan_shm3());
+        holder1.atas_nama_shm3.setText(dm.getAtas_nama_shm3());
+        holder1.alamat_atas_nama_shm3.setText(dm.getAlamat_atas_nama_shm3());
+        holder1.no_ktp_atas_nama_shm3.setText(dm.getNo_ktp_atas_nama_shm3());
+        holder1.masa_berlaku_shm3.setText(dm.getMasa_berlaku_shm3());
+        holder1.ikatan_shm3.setText(dm.getIkatan_shm3());
+        holder1.nilai_ikatan_shm3.setText(dm.getNilai_ikatan_shm3());
+        holder1.no_SHM3.setText(dm.getNo_SHM3());
+        holder1.no_gs_shm3.setText(dm.getNo_gs_shm3());
+        holder1.luas_shm3.setText(dm.getLuas_shm3());
+        holder1.lokasi_shm3.setText(dm.getLokasi_shm3());
+        holder1.asuransi_shm3.setText(dm.getAsuransi_shm3());
+        holder1.nilai_tanah_shm3.setText(formatter.format(Integer.parseInt(dm.getNilai_tanah_shm3())));
+        holder1.nilai_bangunan_shm3.setText(formatter.format(Integer.parseInt(dm.getNilai_bangunan_shm3())));
+        holder1.total_taksiran_shm3.setText(formatter.format(Integer.parseInt(dm.getTotal_taksiran_shm3())));
+
+        holder1.nama_jaminan_shm4.setText(dm.getNama_jaminan_shm4());
+        holder1.jenis_jaminan_shm4.setText(dm.getJenis_jaminan_shm4());
+        holder1.atas_nama_shm4.setText(dm.getAtas_nama_shm4());
+        holder1.alamat_atas_nama_shm4.setText(dm.getAlamat_atas_nama_shm4());
+        holder1.no_ktp_atas_nama_shm4.setText(dm.getNo_ktp_atas_nama_shm4());
+        holder1.masa_berlaku_shm4.setText(dm.getMasa_berlaku_shm4());
+        holder1.ikatan_shm4.setText(dm.getIkatan_shm4());
+        holder1.nilai_ikatan_shm4.setText(dm.getNilai_ikatan_shm4());
+        holder1.no_SHM4.setText(dm.getNo_SHM4());
+        holder1.no_gs_shm4.setText(dm.getNo_gs_shm4());
+        holder1.luas_shm4.setText(dm.getLuas_shm4());
+        holder1.lokasi_shm4.setText(dm.getLokasi_shm4());
+        holder1.asuransi_shm4.setText(dm.getAsuransi_shm4());
+        holder1.nilai_tanah_shm4.setText(formatter.format(Integer.parseInt(dm.getNilai_tanah_shm4())));
+        holder1.nilai_bangunan_shm4.setText(formatter.format(Integer.parseInt(dm.getNilai_bangunan_shm4())));
+        holder1.total_taksiran_shm4.setText(formatter.format(Integer.parseInt(dm.getTotal_taksiran_shm4())));
+
+        holder1.nama_jaminan_shm5.setText(dm.getNama_jaminan_shm5());
+        holder1.jenis_jaminan_shm5.setText(dm.getJenis_jaminan_shm5());
+        holder1.atas_nama_shm5.setText(dm.getAtas_nama_shm5());
+        holder1.alamat_atas_nama_shm5.setText(dm.getAlamat_atas_nama_shm5());
+        holder1.no_ktp_atas_nama_shm5.setText(dm.getNo_ktp_atas_nama_shm5());
+        holder1.masa_berlaku_shm5.setText(dm.getMasa_berlaku_shm5());
+        holder1.ikatan_shm5.setText(dm.getIkatan_shm5());
+        holder1.nilai_ikatan_shm5.setText(dm.getNilai_ikatan_shm5());
+        holder1.no_SHM5.setText(dm.getNo_SHM5());
+        holder1.no_gs_shm5.setText(dm.getNo_gs_shm5());
+        holder1.luas_shm5.setText(dm.getLuas_shm5());
+        holder1.lokasi_shm5.setText(dm.getLokasi_shm5());
+        holder1.asuransi_shm5.setText(dm.getAsuransi_shm5());
+        holder1.nilai_tanah_shm5.setText(formatter.format(Integer.parseInt(dm.getNilai_tanah_shm5())));
+        holder1.nilai_bangunan_shm5.setText(formatter.format(Integer.parseInt(dm.getNilai_bangunan_shm5())));
+        holder1.total_taksiran_shm5.setText(formatter.format(Integer.parseInt(dm.getTotal_taksiran_shm5())));
+
+        holder1.nama_jaminan_bpkb1.setText(dm.getNama_jaminan_bpkb1());
+        holder1.no_bpkb1.setText(dm.getNo_bpkb1());
+        holder1.merk_bpkb1.setText(dm.getMerk_bpkb1());
+        holder1.tahun_bpkb1.setText(dm.getTahun_bpkb1());
+        holder1.no_rangka_bpkb1.setText(dm.getNo_rangka_bpkb1());
+        holder1.no_mesin_bpkb1.setText(dm.getNo_mesin_bpkb1());
+        holder1.warna_bpkb1.setText(dm.getWarna_bpkb1());
+        holder1.nopol_bpkb1.setText(dm.getNopol_bpkb1());
+        holder1.atas_nama_bpkb1.setText(dm.getAtas_nama_bpkb1());
+        holder1.alamat_bpkb1.setText(dm.getAlamat_bpkb1());
+        holder1.ikatan_bpkb1.setText(dm.getIkatan_bpkb1());
+        holder1.nilai_fiducia1.setText(dm.getNilai_fiducia1());
+        holder1.nilai_taksiran_bpkb1.setText(formatter.format(Integer.parseInt(dm.getNilai_taksiran_bpkb1())));
+
+        holder1.nama_jaminan_bpkb2.setText(dm.getNama_jaminan_bpkb2());
+        holder1.no_bpkb2.setText(dm.getNo_bpkb2());
+        holder1.merk_bpkb2.setText(dm.getMerk_bpkb2());
+        holder1.tahun_bpkb2.setText(dm.getTahun_bpkb2());
+        holder1.no_rangka_bpkb2.setText(dm.getNo_rangka_bpkb2());
+        holder1.no_mesin_bpkb2.setText(dm.getNo_mesin_bpkb2());
+        holder1.warna_bpkb2.setText(dm.getWarna_bpkb2());
+        holder1.nopol_bpkb2.setText(dm.getNopol_bpkb2());
+        holder1.atas_nama_bpkb2.setText(dm.getAtas_nama_bpkb2());
+        holder1.alamat_bpkb2.setText(dm.getAlamat_bpkb2());
+        holder1.ikatan_bpkb2.setText(dm.getIkatan_bpkb2());
+        holder1.nilai_fiducia2.setText(dm.getNilai_fiducia2());
+        holder1.nilai_taksiran_bpkb2.setText(formatter.format(Integer.parseInt(dm.getNilai_taksiran_bpkb2())));
+
+        holder1.nama_jaminan_bpkb3.setText(dm.getNama_jaminan_bpkb3());
+        holder1.no_bpkb3.setText(dm.getNo_bpkb3());
+        holder1.merk_bpkb3.setText(dm.getMerk_bpkb3());
+        holder1.tahun_bpkb3.setText(dm.getTahun_bpkb3());
+        holder1.no_rangka_bpkb3.setText(dm.getNo_rangka_bpkb3());
+        holder1.no_mesin_bpkb3.setText(dm.getNo_mesin_bpkb3());
+        holder1.warna_bpkb3.setText(dm.getWarna_bpkb3());
+        holder1.nopol_bpkb3.setText(dm.getNopol_bpkb3());
+        holder1.atas_nama_bpkb3.setText(dm.getAtas_nama_bpkb3());
+        holder1.alamat_bpkb3.setText(dm.getAlamat_bpkb3());
+        holder1.ikatan_bpkb3.setText(dm.getIkatan_bpkb3());
+        holder1.nilai_fiducia3.setText(dm.getNilai_fiducia3());
+        holder1.nilai_taksiran_bpkb3.setText(formatter.format(Integer.parseInt(dm.getNilai_taksiran_bpkb3())));
+
+        holder1.nama_jaminan_bpkb4.setText(dm.getNama_jaminan_bpkb4());
+        holder1.no_bpkb4.setText(dm.getNo_bpkb4());
+        holder1.merk_bpkb4.setText(dm.getMerk_bpkb4());
+        holder1.tahun_bpkb4.setText(dm.getTahun_bpkb4());
+        holder1.no_rangka_bpkb4.setText(dm.getNo_rangka_bpkb4());
+        holder1.no_mesin_bpkb4.setText(dm.getNo_mesin_bpkb4());
+        holder1.warna_bpkb4.setText(dm.getWarna_bpkb4());
+        holder1.nopol_bpkb4.setText(dm.getNopol_bpkb4());
+        holder1.atas_nama_bpkb4.setText(dm.getAtas_nama_bpkb4());
+        holder1.alamat_bpkb4.setText(dm.getAlamat_bpkb4());
+        holder1.ikatan_bpkb4.setText(dm.getIkatan_bpkb4());
+        holder1.nilai_fiducia4.setText(dm.getNilai_fiducia4());
+        holder1.nilai_taksiran_bpkb4.setText(formatter.format(Integer.parseInt(dm.getNilai_taksiran_bpkb4())));
+
+        holder1.nama_jaminan_bpkb5.setText(dm.getNama_jaminan_bpkb5());
+        holder1.no_bpkb5.setText(dm.getNo_bpkb5());
+        holder1.merk_bpkb5.setText(dm.getMerk_bpkb5());
+        holder1.tahun_bpkb5.setText(dm.getTahun_bpkb5());
+        holder1.no_rangka_bpkb5.setText(dm.getNo_rangka_bpkb5());
+        holder1.no_mesin_bpkb5.setText(dm.getNo_mesin_bpkb5());
+        holder1.warna_bpkb5.setText(dm.getWarna_bpkb5());
+        holder1.nopol_bpkb5.setText(dm.getNopol_bpkb5());
+        holder1.atas_nama_bpkb5.setText(dm.getAtas_nama_bpkb5());
+        holder1.alamat_bpkb5.setText(dm.getAlamat_bpkb5());
+        holder1.ikatan_bpkb5.setText(dm.getIkatan_bpkb5());
+        holder1.nilai_fiducia5.setText(dm.getNilai_fiducia5());
+        holder1.nilai_taksiran_bpkb5.setText(formatter.format(Integer.parseInt(dm.getNilai_taksiran_bpkb5())));
+
+        holder1.nama_jaminand1.setText(dm.getJaminan_bilyet1());
+        holder1.nama_deposito1.setText(dm.getAtas_nama_bilyet1());
+        holder1.no_bilyet1.setText(dm.getNo_bilyet1());
+        holder1.alamatd1.setText(dm.getAlamat_bilyet1());
+        holder1.pengikat_jaminand1.setText(dm.getIkatan_bilyet1());
+        holder1.deposito1.setText(dm.getNilai_bilyet1());
+        holder1.total_nilai_jaminan1.setText(formatter.format(Integer.parseInt(dm.getTotal_nilai_bilyet1())));
+        holder1.persen_dari_plafond1.setText(persen.format(Double.parseDouble(dm.getPersen_dari_plafond1())));
+
+        holder1.nama_jaminand2.setText(dm.getJaminan_bilyet2());
+        holder1.nama_deposito2.setText(dm.getAtas_nama_bilyet2());
+        holder1.no_bilyet2.setText(dm.getNo_bilyet2());
+        holder1.alamatd2.setText(dm.getAlamat_bilyet2());
+        holder1.pengikat_jaminand2.setText(dm.getIkatan_bilyet2());
+        holder1.deposito2.setText(dm.getNilai_bilyet2());
+        holder1.total_nilai_jaminan2.setText(formatter.format(Integer.parseInt(dm.getTotal_nilai_bilyet2())));
+        holder1.persen_dari_plafond2.setText(dm.getPersen_dari_plafond2());
+
+        holder1.nama_jaminand3.setText(dm.getJaminan_bilyet3());
+        holder1.nama_deposito3.setText(dm.getAtas_nama_bilyet3());
+        holder1.no_bilyet3.setText(dm.getNo_bilyet3());
+        holder1.alamatd3.setText(dm.getAlamat_bilyet3());
+        holder1.pengikat_jaminand3.setText(dm.getIkatan_bilyet3());
+        holder1.deposito3.setText(dm.getNilai_bilyet3());
+        holder1.total_nilai_jaminan3.setText(formatter.format(Integer.parseInt(dm.getTotal_nilai_bilyet3())));
+        holder1.persen_dari_plafond3.setText(dm.getPersen_dari_plafond3());
+
+       
+
+        holder1.dm = dm;
+    }
+
+    private TableLayout findViewById(int tabLayout_shm1) {
+        return null;
+    }
+
+
+    @Override
+    public int getItemCount() {
+        return mList.size();
+    }
+
+
+    public class HolderData extends RecyclerView.ViewHolder {
+       
+        tabLayout_shm1, nama_jaminan_shm1, jenis_jaminan_shm1, atas_nama_shm1, alamat_atas_nama_shm1, no_ktp_atas_nama_shm1, masa_berlaku_shm1,
+                ikatan_shm1, nilai_ikatan_shm1, no_SHM1, no_gs_shm1, luas_shm1, lokasi_shm1, asuransi_shm1, nilai_tanah_shm1,
+                nilai_bangunan_shm1, total_taksiran_shm1,
+
+                nama_jaminan_shm2, jenis_jaminan_shm2, atas_nama_shm2, alamat_atas_nama_shm2, no_ktp_atas_nama_shm2, masa_berlaku_shm2,
+                ikatan_shm2, nilai_ikatan_shm2, no_SHM2, no_gs_shm2, luas_shm2, lokasi_shm2, asuransi_shm2,
+                nilai_tanah_shm2, nilai_bangunan_shm2, total_taksiran_shm2,
+
+                nama_jaminan_shm3, jenis_jaminan_shm3, atas_nama_shm3, alamat_atas_nama_shm3, no_ktp_atas_nama_shm3, masa_berlaku_shm3,
+                ikatan_shm3, nilai_ikatan_shm3, no_SHM3, no_gs_shm3, luas_shm3, lokasi_shm3, asuransi_shm3, nilai_tanah_shm3, nilai_bangunan_shm3, total_taksiran_shm3,
+
+                nama_jaminan_shm4, jenis_jaminan_shm4, atas_nama_shm4, alamat_atas_nama_shm4, no_ktp_atas_nama_shm4, masa_berlaku_shm4,
+                ikatan_shm4, nilai_ikatan_shm4, no_SHM4, no_gs_shm4, luas_shm4, lokasi_shm4, asuransi_shm4, nilai_tanah_shm4, nilai_bangunan_shm4, total_taksiran_shm4,
+
+                nama_jaminan_shm5, jenis_jaminan_shm5, atas_nama_shm5, alamat_atas_nama_shm5, no_ktp_atas_nama_shm5, masa_berlaku_shm5,
+                ikatan_shm5, nilai_ikatan_shm5, no_SHM5, no_gs_shm5, luas_shm5, lokasi_shm5, asuransi_shm5, nilai_tanah_shm5, nilai_bangunan_shm5, total_taksiran_shm5,
+
+        //Aspek Jaminan BPKB 1
+                nama_jaminan_bpkb1, no_bpkb1, merk_bpkb1, tahun_bpkb1, no_rangka_bpkb1, no_mesin_bpkb1, warna_bpkb1, nopol_bpkb1,
+                atas_nama_bpkb1, alamat_bpkb1,
+                ikatan_bpkb1, nilai_fiducia1, nilai_taksiran_bpkb1,
+
+        //Aspek Jaminan BPKB 2
+                nama_jaminan_bpkb2, no_bpkb2, merk_bpkb2, tahun_bpkb2, no_rangka_bpkb2, no_mesin_bpkb2, warna_bpkb2, nopol_bpkb2, atas_nama_bpkb2, alamat_bpkb2,
+                ikatan_bpkb2, nilai_fiducia2, nilai_taksiran_bpkb2,
+
+        //Aspek Jaminan BPKB 3
+                nama_jaminan_bpkb3, no_bpkb3, merk_bpkb3, tahun_bpkb3, no_rangka_bpkb3, no_mesin_bpkb3, warna_bpkb3, nopol_bpkb3, atas_nama_bpkb3, alamat_bpkb3,
+                ikatan_bpkb3, nilai_fiducia3, nilai_taksiran_bpkb3,
+
+        //Aspek Jaminan BPKB 4
+                nama_jaminan_bpkb4, no_bpkb4, merk_bpkb4, tahun_bpkb4, no_rangka_bpkb4, no_mesin_bpkb4, warna_bpkb4, nopol_bpkb4, atas_nama_bpkb4, alamat_bpkb4,
+                ikatan_bpkb4, nilai_fiducia4, nilai_taksiran_bpkb4,
+
+        //Aspek Jaminan BPKB 5
+                nama_jaminan_bpkb5, no_bpkb5, merk_bpkb5, tahun_bpkb5, no_rangka_bpkb5, no_mesin_bpkb5, warna_bpkb5, nopol_bpkb5, atas_nama_bpkb5, alamat_bpkb5,
+                ikatan_bpkb5, nilai_fiducia5, nilai_taksiran_bpkb5,
+
+        //Aspek Jaminan BILYET Deposito 1
+                nama_jaminand1, nama_deposito1, no_bilyet1, alamatd1, pengikat_jaminand1, deposito1, total_nilai_jaminan1,
+                persen_dari_plafond1,
+
+        //Aspek Jaminan BILYET Deposito 2
+                nama_jaminand2, nama_deposito2, no_bilyet2, alamatd2, pengikat_jaminand2, deposito2, total_nilai_jaminan2, persen_dari_plafond2,
+
+        //Aspek Jaminan BILYET Deposito 3
+                nama_jaminand3, nama_deposito3, no_bilyet3, alamatd3, pengikat_jaminand3, deposito3, total_nilai_jaminan3, persen_dari_plafond3,
+
+      
+        DataModel dm;
+
+        public HolderData(View v) {
+            super(v);
+
+               //tabLayout_shm1 = v.findViewById(R.id.tabLayout_shm1);
+                //tabLayout_shm1.setVisibility(View.GONE);
+                nama_jaminan_shm1 = v.findViewById(R.id.tvNama_jaminan1);
+                jenis_jaminan_shm1 = v.findViewById(R.id.tvjenis_jaminan1);
+                atas_nama_shm1 = v.findViewById(R.id.tvatas_nama_jaminan1);
+                alamat_atas_nama_shm1 = v.findViewById(R.id.tvAlamat_atas_nama_shm1);
+                no_ktp_atas_nama_shm1 = v.findViewById(R.id.tvno_ktp_atas_nama_shm1);
+                masa_berlaku_shm1 = v.findViewById(R.id.tvmasa_berlaku_shm1);
+                ikatan_shm1 = v.findViewById(R.id.tvpengikat_jaminan_shm1);
+                nilai_ikatan_shm1 = v.findViewById(R.id.tvhak_tanggungan1);
+                no_SHM1 = v.findViewById(R.id.tvno_shm1);
+                no_gs_shm1 = v.findViewById(R.id.tvno_gs1);
+                luas_shm1 = v.findViewById(R.id.tvluas1);
+                lokasi_shm1 = v.findViewById(R.id.tvlokasi1);
+                asuransi_shm1 = v.findViewById(R.id.tvasuransi1);
+                nilai_tanah_shm1 = v.findViewById(R.id.tvharga_tanah1);
+                nilai_bangunan_shm1 = v.findViewById(R.id.tvharga_bangunan1);
+                total_taksiran_shm1 = v.findViewById(R.id.tvtotal_taksiran1);
+
+            if(nama_jaminan_shm1.equals("")) {
+
+                TableLayout a = v.findViewById(R.id.tabLayout_shm1);
+                a.setVisibility(View.GONE);
+            }
+
+            nama_jaminan_shm2 = v.findViewById(R.id.tvNama_jaminan2);
+            jenis_jaminan_shm2 = v.findViewById(R.id.tvjenis_jaminan2);
+            atas_nama_shm2 = v.findViewById(R.id.tvatas_nama_jaminan2);
+            alamat_atas_nama_shm2 = v.findViewById(R.id.tvAlamat_atas_nama_shm2);
+            no_ktp_atas_nama_shm2 = v.findViewById(R.id.tvno_ktp_atas_nama_shm2);
+            masa_berlaku_shm2 = v.findViewById(R.id.tvmasa_berlaku_shm2);
+            ikatan_shm2 = v.findViewById(R.id.tvpengikat_jaminan_shm2);
+            nilai_ikatan_shm2 = v.findViewById(R.id.tvhak_tanggungan2);
+            no_SHM2 = v.findViewById(R.id.tvno_shm2);
+            no_gs_shm2 = v.findViewById(R.id.tvno_gs2);
+            luas_shm2 = v.findViewById(R.id.tvluas2);
+            lokasi_shm2 = v.findViewById(R.id.tvlokasi2);
+            asuransi_shm2 = v.findViewById(R.id.tvasuransi2);
+            nilai_tanah_shm2 = v.findViewById(R.id.tvharga_tanah2);
+            nilai_bangunan_shm2 = v.findViewById(R.id.tvharga_bangunan2);
+            total_taksiran_shm2 = v.findViewById(R.id.tvtotal_taksiran2);
+
+            nama_jaminan_shm3 = v.findViewById(R.id.tvNama_jaminan3);
+            jenis_jaminan_shm3 = v.findViewById(R.id.tvjenis_jaminan3);
+            atas_nama_shm3 = v.findViewById(R.id.tvatas_nama_jaminan3);
+            alamat_atas_nama_shm3 = v.findViewById(R.id.tvAlamat_atas_nama_shm3);
+            no_ktp_atas_nama_shm3 = v.findViewById(R.id.tvno_ktp_atas_nama_shm3);
+            masa_berlaku_shm3 = v.findViewById(R.id.tvmasa_berlaku_shm3);
+            ikatan_shm3 = v.findViewById(R.id.tvpengikat_jaminan_shm3);
+            nilai_ikatan_shm3 = v.findViewById(R.id.tvhak_tanggungan3);
+            no_SHM3 = v.findViewById(R.id.tvno_shm3);
+            no_gs_shm3 = v.findViewById(R.id.tvno_gs3);
+            luas_shm3 = v.findViewById(R.id.tvluas3);
+            lokasi_shm3 = v.findViewById(R.id.tvlokasi3);
+            asuransi_shm3 = v.findViewById(R.id.tvasuransi3);
+            nilai_tanah_shm3 = v.findViewById(R.id.tvharga_tanah3);
+            nilai_bangunan_shm3 = v.findViewById(R.id.tvharga_bangunan3);
+            total_taksiran_shm3 = v.findViewById(R.id.tvtotal_taksiran3);
+
+            nama_jaminan_shm4 = v.findViewById(R.id.tvNama_jaminan4);
+            jenis_jaminan_shm4 = v.findViewById(R.id.tvjenis_jaminan4);
+            atas_nama_shm4 = v.findViewById(R.id.tvatas_nama_jaminan4);
+            alamat_atas_nama_shm4 = v.findViewById(R.id.tvAlamat_atas_nama_shm4);
+            no_ktp_atas_nama_shm4 = v.findViewById(R.id.tvno_ktp_atas_nama_shm4);
+            masa_berlaku_shm4 = v.findViewById(R.id.tvmasa_berlaku_shm4);
+            ikatan_shm4 = v.findViewById(R.id.tvpengikat_jaminan_shm4);
+            nilai_ikatan_shm4 = v.findViewById(R.id.tvhak_tanggungan4);
+            no_SHM4 = v.findViewById(R.id.tvno_shm4);
+            no_gs_shm4 = v.findViewById(R.id.tvno_gs4);
+            luas_shm4 = v.findViewById(R.id.tvluas4);
+            lokasi_shm4 = v.findViewById(R.id.tvlokasi4);
+            asuransi_shm4 = v.findViewById(R.id.tvasuransi4);
+            nilai_tanah_shm4 = v.findViewById(R.id.tvharga_tanah4);
+            nilai_bangunan_shm4 = v.findViewById(R.id.tvharga_bangunan4);
+            total_taksiran_shm4 = v.findViewById(R.id.tvtotal_taksiran4);
+
+            nama_jaminan_shm5 = v.findViewById(R.id.tvNama_jaminan5);
+            jenis_jaminan_shm5 = v.findViewById(R.id.tvjenis_jaminan5);
+            atas_nama_shm5 = v.findViewById(R.id.tvatas_nama_jaminan5);
+            alamat_atas_nama_shm5 = v.findViewById(R.id.tvAlamat_atas_nama_shm5);
+            no_ktp_atas_nama_shm5 = v.findViewById(R.id.tvno_ktp_atas_nama_shm5);
+            masa_berlaku_shm5 = v.findViewById(R.id.tvmasa_berlaku_shm5);
+            ikatan_shm5 = v.findViewById(R.id.tvpengikat_jaminan_shm5);
+            nilai_ikatan_shm5 = v.findViewById(R.id.tvhak_tanggungan5);
+            no_SHM5 = v.findViewById(R.id.tvno_shm5);
+            no_gs_shm5 = v.findViewById(R.id.tvno_gs5);
+            luas_shm5 = v.findViewById(R.id.tvluas5);
+            lokasi_shm5 = v.findViewById(R.id.tvlokasi5);
+            asuransi_shm5 = v.findViewById(R.id.tvasuransi5);
+            nilai_tanah_shm5 = v.findViewById(R.id.tvharga_tanah5);
+            nilai_bangunan_shm5 = v.findViewById(R.id.tvharga_bangunan5);
+            total_taksiran_shm5 = v.findViewById(R.id.tvtotal_taksiran5);
+
+            //BPKB
+            nama_jaminan_bpkb1 = v.findViewById(R.id.tvNama_jaminan_bpkb1);
+            no_bpkb1 = v.findViewById(R.id.tvno_bpkb1);
+            merk_bpkb1 = v.findViewById(R.id.tvMerk1);
+            tahun_bpkb1 = v.findViewById(R.id.tvtahun1);
+            no_rangka_bpkb1 = v.findViewById(R.id.tvno_rangka1);
+            no_mesin_bpkb1 = v.findViewById(R.id.tvno_mesin1);
+            warna_bpkb1 = v.findViewById(R.id.tvwarna1);
+            nopol_bpkb1 = v.findViewById(R.id.tvno_polisi1);
+            atas_nama_bpkb1 = v.findViewById(R.id.tvatas_nama_bpkb1);
+            alamat_bpkb1 = v.findViewById(R.id.tvalamat_bpkb1);
+            ikatan_bpkb1 = v.findViewById(R.id.tvpengikat_jaminan_bpkb1);
+            nilai_fiducia1 = v.findViewById(R.id.tvnilai_fiducia1);
+            nilai_taksiran_bpkb1 = v.findViewById(R.id.tvtaksiran_harga_motor1);
+
+            //BPKB
+            nama_jaminan_bpkb2 = v.findViewById(R.id.tvNama_jaminan_bpkb2);
+            no_bpkb2 = v.findViewById(R.id.tvno_bpkb2);
+            merk_bpkb2 = v.findViewById(R.id.tvMerk2);
+            tahun_bpkb2 = v.findViewById(R.id.tvtahun2);
+            no_rangka_bpkb2 = v.findViewById(R.id.tvno_rangka2);
+            no_mesin_bpkb2 = v.findViewById(R.id.tvno_mesin2);
+            warna_bpkb2 = v.findViewById(R.id.tvwarna2);
+            nopol_bpkb2 = v.findViewById(R.id.tvno_polisi2);
+            atas_nama_bpkb2 = v.findViewById(R.id.tvatas_nama_bpkb2);
+            alamat_bpkb2 = v.findViewById(R.id.tvalamat_bpkb2);
+            ikatan_bpkb2 = v.findViewById(R.id.tvpengikat_jaminan_bpkb2);
+            nilai_fiducia2 = v.findViewById(R.id.tvnilai_fiducia2);
+            nilai_taksiran_bpkb2 = v.findViewById(R.id.tvtaksiran_harga_motor2);
+
+            //BPKB
+            nama_jaminan_bpkb3 = v.findViewById(R.id.tvNama_jaminan_bpkb3);
+            no_bpkb3 = v.findViewById(R.id.tvno_bpkb3);
+            merk_bpkb3 = v.findViewById(R.id.tvMerk3);
+            tahun_bpkb3 = v.findViewById(R.id.tvtahun3);
+            no_rangka_bpkb3 = v.findViewById(R.id.tvno_rangka3);
+            no_mesin_bpkb3 = v.findViewById(R.id.tvno_mesin3);
+            warna_bpkb3 = v.findViewById(R.id.tvwarna3);
+            nopol_bpkb3 = v.findViewById(R.id.tvno_polisi3);
+            atas_nama_bpkb3 = v.findViewById(R.id.tvatas_nama_bpkb3);
+            alamat_bpkb3 = v.findViewById(R.id.tvalamat_bpkb3);
+            ikatan_bpkb3 = v.findViewById(R.id.tvpengikat_jaminan_bpkb3);
+            nilai_fiducia3 = v.findViewById(R.id.tvnilai_fiducia3);
+            nilai_taksiran_bpkb3 = v.findViewById(R.id.tvtaksiran_harga_motor_bpkb3);
+
+            //BPKB
+            nama_jaminan_bpkb4 = v.findViewById(R.id.tvNama_jaminan_bpkb4);
+            no_bpkb4 = v.findViewById(R.id.tvno_bpkb4);
+            merk_bpkb4 = v.findViewById(R.id.tvMerk4);
+            tahun_bpkb4 = v.findViewById(R.id.tvtahun4);
+            no_rangka_bpkb4 = v.findViewById(R.id.tvno_rangka4);
+            no_mesin_bpkb4 = v.findViewById(R.id.tvno_mesin4);
+            warna_bpkb4 = v.findViewById(R.id.tvwarna4);
+            nopol_bpkb4 = v.findViewById(R.id.tvno_polisi4);
+            atas_nama_bpkb4 = v.findViewById(R.id.tvatas_nama_bpkb4);
+            alamat_bpkb4 = v.findViewById(R.id.tvalamat_bpkb4);
+            ikatan_bpkb4 = v.findViewById(R.id.tvpengikat_jaminan_bpkb4);
+            nilai_fiducia4 = v.findViewById(R.id.tvnilai_fiducia4);
+            nilai_taksiran_bpkb4 = v.findViewById(R.id.tvtaksiran_harga_motor4);
+
+            //BPKB
+            nama_jaminan_bpkb5 = v.findViewById(R.id.tvNama_jaminan_bpkb5);
+            no_bpkb5 = v.findViewById(R.id.tvno_bpkb5);
+            merk_bpkb5 = v.findViewById(R.id.tvMerk5);
+            tahun_bpkb5 = v.findViewById(R.id.tvtahun5);
+            no_rangka_bpkb5 = v.findViewById(R.id.tvno_rangka5);
+            no_mesin_bpkb5 = v.findViewById(R.id.tvno_mesin5);
+            warna_bpkb5 = v.findViewById(R.id.tvwarna5);
+            nopol_bpkb5 = v.findViewById(R.id.tvno_polisi5);
+            atas_nama_bpkb5 = v.findViewById(R.id.tvatas_nama_bpkb5);
+            alamat_bpkb5 = v.findViewById(R.id.tvalamat_bpkb5);
+            ikatan_bpkb5 = v.findViewById(R.id.tvpengikat_jaminan_bpkb5);
+            nilai_fiducia5 = v.findViewById(R.id.tvnilai_fiducia5);
+            nilai_taksiran_bpkb5 = v.findViewById(R.id.tvtaksiran_harga_motor5);
+
+            //Deposito
+            nama_jaminand1 = v.findViewById(R.id.tvdeposito_berjangka1);
+            nama_deposito1 = v.findViewById(R.id.tvatas_nama1);
+            no_bilyet1 = v.findViewById(R.id.tvno_bilyet1);
+            alamatd1 = v.findViewById(R.id.tvalamat_deposito1);
+            pengikat_jaminand1 = v.findViewById(R.id.tvpengikat_jaminan_deposito1);
+            deposito1 = v.findViewById(R.id.tvbesar_deposito1);
+            total_nilai_jaminan1 = v.findViewById(R.id.tvtotal_nilai_jaminan1);
+            persen_dari_plafond1 = v.findViewById(R.id.tvdari_palfond1);
+
+            //Deposito 2
+            nama_jaminand2 = v.findViewById(R.id.tvdeposito_berjangka_deposito2);
+            nama_deposito2 = v.findViewById(R.id.tvatas_nama_deposito2);
+            no_bilyet2 = v.findViewById(R.id.tvno_bilyet_deposito2);
+            alamatd2 = v.findViewById(R.id.tvalamat_deposito2);
+            pengikat_jaminand2 = v.findViewById(R.id.tvpengikat_jaminan_deposito2);
+            deposito2 = v.findViewById(R.id.tvbesar_deposito2);
+            total_nilai_jaminan2 = v.findViewById(R.id.tvtotal_nilai_jaminan_deposito2);
+            persen_dari_plafond2 = v.findViewById(R.id.tvdari_palfond_deposito2);
+
+            //Deposito 2
+            nama_jaminand3 = v.findViewById(R.id.tvdeposito_berjangka_deposito3);
+            nama_deposito3 = v.findViewById(R.id.tvatas_nama_deposito3);
+            no_bilyet3 = v.findViewById(R.id.tvno_bilyet_deposito3);
+            alamatd3 = v.findViewById(R.id.tvalamat_deposito3);
+            pengikat_jaminand3 = v.findViewById(R.id.tvpengikat_jaminan_deposito3);
+            deposito3 = v.findViewById(R.id.tvbesar_deposito3);
+            total_nilai_jaminan3 = v.findViewById(R.id.tvtotal_nilai_jaminan_deposito3);
+            persen_dari_plafond3 = v.findViewById(R.id.tvdari_palfond_deposito3);
+
+          
+        }
+
+    }
+}
